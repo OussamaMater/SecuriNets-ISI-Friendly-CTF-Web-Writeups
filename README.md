@@ -70,13 +70,13 @@ This challenge is similar to the first one. By inspecting the code, you'll find 
 </html>
 ```
 
-### IDOR
+## IDOR
 
 >Securinets{1d0r5_4r3_Fr3quEn7!}
 
 In this challenge, you are presented with a web page containing a dropdown menu. By selecting an order, you can retrieve its details. If you inspect the network tab, you will notice that each time you choose an order, a request is made to `/orders.php?id=<id>`. You can continuously change the id until you obtain the flag. The correct ID was 1.
 
-### SQL Injection
+## SQL Injection
 
 >flag{y0u_F0uNd_mY_p@ssWoRd}
 
@@ -112,19 +112,19 @@ Running the query reveals three columns: `id`, `password`, and `username`. Let's
 
 And indeed, the flag is stored as one of the passwords.
 
-### Directory Indexing
+## Directory Indexing
 
 >Securinets{directory_listening_for_the_win_guys}
 
 This challenge revolves around [directory listing](https://sapt.medium.com/directory-listing-vulnerability-cyber-sapiens-internship-task-16-fca5c9a4bb8a). Open any profile page and then remove the `id` parameter from the URL, making it look like the following: `http://46.101.195.237:8000/profile/`. This action will display a list of all files, including the flag.
 
-### ROB
+## ROB
 
 >Securinets{Yaay_u_f0und_r0bots!!}
 
 This challenge hints at eliminating the [robots](https://www.seobility.net/en/wiki/Robots.txt), To solve the challenge, navigate to `https://friendly.securinets-isi.com/robots.txt`.
 
-### Remote Code Execution
+## Remote Code Execution
 
 > Securinets{;_@nd_H4cK_tH3_Pl4n3T}
 
@@ -143,3 +143,7 @@ shell_exec('ping 127.0.1; ls -l');
 ```
 
 Executing this command indeed returns the directory listing. We can proceed by passing `127.0.0.1; cat flag.php`, this will return the content of the file,  and you can read the flag by inspecting the page.
+
+## Remaining Challenges
+
+For the last three challenges, the author has provided a detailed write-up on solving them. You can find it [here](https://github.com/Raynskhiri/Writeup).
